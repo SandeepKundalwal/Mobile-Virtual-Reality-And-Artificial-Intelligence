@@ -22,21 +22,12 @@ public class MoveCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // get cube input
+        // get movement input
         forwardInput = Input.GetAxis("Vertical");
 
         // on click of UpArrow, move towards the facing direction
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(Vector3.back * moveSpeed * forwardInput * Time.deltaTime);
-        }
-
-        // on click of DownArrow, move opposite to the facing direction
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(-Vector3.forward * moveSpeed * forwardInput * Time.deltaTime);
-        }
-
+        transform.Translate(Vector3.forward * moveSpeed * forwardInput * Time.deltaTime);
+        
         // on click of LeftArrow, rotate Anti-Clockwise
         if (Input.GetKey(KeyCode.LeftArrow))
         {
